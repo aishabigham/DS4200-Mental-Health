@@ -169,7 +169,7 @@
   <div class="hero-text">
     <span class="section-label">DS4200 Final Project</span>
     <h1>How do daily habits shape <em>mental health</em>?</h1>
-    <p class="hero-sub">We explore how everyday lifestyle behaviors - sleep, exercise, diet, and screen time — relate to stress levels, happiness, and mental health conditions in a global survey of 3,000 individuals. As students ourselves, we are particularly interested in patterns among young adults and what lifestyle choices might support better mental well-being.</p>
+    <p class="hero-sub">We explore how everyday lifestyle behaviors — sleep, exercise, diet, and screen time — relate to stress levels, happiness, and mental health conditions in a global survey of 3,000 individuals. As students ourselves, we are particularly interested in patterns among young adults and what lifestyle choices might support better mental well-being.</p>
     <a href="#visualizations" class="btn">Explore visualizations ↓</a>
   </div>
   <div class="hero-stats">
@@ -298,7 +298,7 @@
     <div class="viz-block">
       <div class="viz-header">
         <span class="viz-num">Visualization 4 — Altair</span>
-        <div class="viz-title">Happiness, stress & exercise — interactive dashboard (women)</div>
+        <div class="viz-title">Happiness, stress & exercise — interactive dashboard</div>
         <p class="viz-desc">A three-panel Altair dashboard combining: happiness by stress level, exercise by happiness faceted by stress, and stress by happiness faceted by exercise. A shared dropdown filter links all three panels.</p>
       </div>
       <div class="interaction-note">
@@ -314,55 +314,77 @@
     </div>
   </section>
 
-  <!-- VIZ 5: Strip Plot -->
+  <!-- VIZ 5: Mental Health Condition Dashboard -->
   <section class="viz-section">
     <div class="viz-block">
       <div class="viz-header">
         <span class="viz-num">Visualization 5 — Altair</span>
-        <div class="viz-title">Happiness distribution by exercise level — strip plot (women)</div>
-        <p class="viz-desc">A jittered strip plot where each dot represents one woman in the dataset. Points are spread horizontally with jitter to reduce overlap and reveal the true density of happiness scores within each exercise group.</p>
+        <div class="viz-title">Mental health conditions — sleep, screen time & happiness by gender</div>
+        <p class="viz-desc">A linked dashboard where clicking a mental health condition filters three histograms showing sleep patterns, screen time behavior, and happiness distribution — each broken down by gender.</p>
       </div>
       <div class="interaction-note">
         <span class="icon">ℹ️</span>
-        <span><strong>How to interact:</strong> Use the <strong>dropdown</strong> to filter points by stress level. <strong>Hover</strong> over individual dots to highlight them and see their exact exercise level, happiness score, and stress level in a tooltip.</span>
+        <span><strong>How to interact:</strong> <strong>Click any bar</strong> in the top chart to select a mental health condition. The three charts below will update to show sleep, screen time, and happiness distributions for only that condition, split by gender.</span>
       </div>
       <div class="viz-frame">
-        <iframe src="chart_strip.html" height="520" title="Strip plot"></iframe>
+        <iframe src="chart_condition_dashboard.html" height="1000" title="Mental health condition dashboard"></iframe>
       </div>
       <div class="takeaway">
-        <strong>Takeaway:</strong> Happiness scores are widely distributed within each exercise group, reflecting high individual variability. However, individuals with high exercise levels appear more frequently in the upper range of happiness scores. This pattern holds consistently across all stress levels, reinforcing that physical activity has a stable positive association with well-being independent of stress.
+        <strong>Takeaway:</strong> Sleep patterns are broadly consistent across all mental health conditions and genders, suggesting sleep alone does not differentiate conditions. Screen time shows more variation and clusters at higher ranges (5–8 hours/day) across conditions, indicating excessive screen time may be associated with poorer mental health outcomes. Happiness distributions are similar across conditions but show moderate spread, suggesting it interacts with other lifestyle factors rather than acting as a standalone predictor.
       </div>
     </div>
   </section>
 
-  <!-- VIZ 6: Bar + Histogram -->
+  <!-- VIZ 10: Social Interaction vs Happiness by Age & Gender -->
   <section class="viz-section section-alt">
     <div class="viz-block">
       <div class="viz-header">
         <span class="viz-num">Visualization 6 — Altair</span>
-        <div class="viz-title">Average happiness by stress & happiness distribution by exercise (women)</div>
-        <p class="viz-desc">A side-by-side layout: a bar chart showing average happiness per stress level on the left, and a histogram of happiness score distributions filtered by exercise level on the right.</p>
+        <div class="viz-title">Social interaction vs happiness by age group & gender</div>
+        <p class="viz-desc">A heatmap comparing social interaction scores against happiness scores, faceted by gender and filterable by age group. Darker cells indicate higher density of respondents at that combination.</p>
       </div>
       <div class="interaction-note">
         <span class="icon">ℹ️</span>
-        <span><strong>How to interact:</strong> <strong>Hover</strong> over bars in the left chart to highlight them individually. On the right chart, use the <strong>dropdown</strong> to switch between Low, Moderate, and High exercise levels and observe how the happiness distribution shifts.</span>
+        <span><strong>How to interact:</strong> Use the <strong>dropdown</strong> to filter by age group — Young (≤25), Adult (26–40), or Senior (40+). The heatmaps update for each gender side by side.</span>
       </div>
       <div class="viz-frame">
-        <iframe src="chart_bar_hist.html" height="520" title="Bar and histogram"></iframe>
+        <iframe src="chart_social_age.html" height="420" title="Social interaction vs happiness by age group"></iframe>
       </div>
       <div class="takeaway">
-        <strong>Takeaway:</strong> Average happiness differs by less than 0.5 points across all stress levels, confirming that stress level is not a strong standalone determinant of happiness. Meanwhile, the histogram shows that higher exercise levels shift the distribution of happiness scores upward — more respondents fall in the 6–9 range for high-exercise groups compared to low-exercise groups.
+        <strong>Takeaway:</strong> A consistent positive relationship exists between social interaction and happiness across all age groups — higher interaction corresponds to higher happiness concentrations. This relationship strengthens with age, becoming more pronounced in adult and senior groups. Patterns remain largely consistent across genders, indicating this relationship holds regardless of gender.
       </div>
     </div>
   </section>
 
-  <!-- VIZ 7: Heatmap -->
-  <section class="viz-section">
+  <!-- VIZ 7: Social Interaction vs Happiness by Mental Health Condition -->
+  <section class="viz-section section-alt">
     <div class="viz-block">
       <div class="viz-header">
         <span class="viz-num">Visualization 7 — Altair</span>
-        <div class="viz-title">Average happiness heatmap — stress × exercise level (women)</div>
-        <p class="viz-desc">A heatmap showing average happiness at every combination of stress level and exercise level. Color intensity (viridis scale — darker = lower, lighter = higher) encodes the average happiness value, making interaction effects easy to spot at a glance.</p>
+        <div class="viz-title">Social interaction vs happiness — filtered by mental health condition</div>
+        <p class="viz-desc">The strongest pattern in our dataset. A heatmap of social interaction score vs happiness score, filterable by mental health condition. Higher social interaction consistently maps to higher happiness across all conditions.</p>
+      </div>
+      <div class="interaction-note">
+        <span class="icon">ℹ️</span>
+        <span><strong>How to interact:</strong> Use the <strong>dropdown</strong> to switch between Anxiety, Depression, Bipolar, and PTSD. Observe how the density pattern shifts — especially how PTSD shows the strongest improvement in happiness with increased social interaction.</span>
+      </div>
+      <div class="viz-frame">
+        <iframe src="chart_social_condition.html" height="520" title="Social interaction vs happiness by condition"></iframe>
+      </div>
+      <div class="takeaway">
+        <strong>Takeaway:</strong> This is the strongest pattern in our analysis. Social interaction has a clear positive relationship with happiness across all mental health conditions. Individuals with PTSD show the most pronounced improvement in happiness with higher social interaction. Those with anxiety and bipolar disorder show weaker but still positive patterns. This suggests social engagement is a meaningful lever for well-being, with its impact varying by condition.
+      </div>
+    </div>
+  </section>
+
+
+  <!-- VIZ 8: Heatmap -->
+  <section class="viz-section">
+    <div class="viz-block">
+      <div class="viz-header">
+        <span class="viz-num">Visualization 8 — Altair</span>
+        <div class="viz-title">Average happiness heatmap — stress × exercise level</div>
+        <p class="viz-desc">A heatmap showing average happiness at every combination of stress level and exercise level. Color intensity (viridis scale) encodes the average happiness value, making interaction effects easy to spot at a glance.</p>
       </div>
       <div class="interaction-note">
         <span class="icon">ℹ️</span>
@@ -372,28 +394,28 @@
         <iframe src="chart_heatmap.html" height="420" title="Heatmap"></iframe>
       </div>
       <div class="takeaway">
-        <strong>Takeaway:</strong> Higher exercise levels are associated with higher average happiness across all stress levels. Notably, the combination of low exercise and low stress yields a surprisingly low average happiness — suggesting physical activity is independently important for well-being, not merely a stress buffer. For high-stress individuals, increasing exercise appears to partially offset stress's negative effect on happiness.
+        <strong>Takeaway:</strong> Higher exercise levels are associated with higher average happiness across all stress levels. The combination of low exercise and low stress yields a surprisingly low average happiness — suggesting physical activity is independently important for well-being, not merely a stress buffer. For high-stress individuals, increasing exercise appears to partially offset stress's negative effect on happiness.
       </div>
     </div>
   </section>
 
-  <!-- VIZ 8: Violin -->
+  <!-- VIZ 9: Violin -->
   <section class="viz-section section-alt">
     <div class="viz-block">
       <div class="viz-header">
-        <span class="viz-num">Visualization 8 — Altair</span>
-        <div class="viz-title">Happiness density by stress level — violin plot (women)</div>
-        <p class="viz-desc">A violin/density plot showing the full distribution shape of happiness scores for each stress level, filterable by exercise level. Unlike box plots, this reveals the entire shape and spread of each group's happiness distribution.</p>
+        <span class="viz-num">Visualization 9 — Altair</span>
+        <div class="viz-title">Happiness density by stress level — violin plot</div>
+        <p class="viz-desc">A violin/density plot showing the full distribution shape of happiness scores for each stress level, filterable by exercise level. Unlike box plots, this reveals the entire shape and spread of the distribution.</p>
       </div>
       <div class="interaction-note">
         <span class="icon">ℹ️</span>
-        <span><strong>How to interact:</strong> Use the <strong>dropdown</strong> to filter by exercise level (Low, Moderate, or High). Observe how the density curves shift across stress groups as you change the exercise filter.</span>
+        <span><strong>How to interact:</strong> Use the <strong>dropdown</strong> to filter by exercise level (Low, Moderate, or High). Observe how the density curves shift across stress groups as you change the filter.</span>
       </div>
       <div class="viz-frame">
         <iframe src="chart_violin.html" height="520" title="Violin plot"></iframe>
       </div>
       <div class="takeaway">
-        <strong>Takeaway:</strong> When filtered to high exercise levels, happiness density curves shift toward higher values compared to low exercise across all stress groups. Distributions for low and moderate stress overlap substantially regardless of exercise level, but high-exercise individuals show a distribution more concentrated in the mid-to-high happiness range, further supporting exercise as a key lifestyle factor for well-being.
+        <strong>Takeaway:</strong> When filtered to high exercise levels, happiness density curves shift toward higher values across all stress groups. High-exercise individuals show a distribution more concentrated in the mid-to-high happiness range, further confirming exercise as a key lifestyle factor for well-being.
       </div>
     </div>
   </section>
@@ -405,30 +427,30 @@
   <div style="max-width: 900px; margin: 0 auto;">
     <span class="section-label">Conclusion</span>
     <h2>What we <em>learned</em></h2>
-    <p class="lead" style="margin-bottom: 2.5rem;">Our analysis of 3,000 global survey responses reveals consistent patterns about which lifestyle habits are most meaningfully associated with mental well-being. While no single factor determines happiness or mental health, physical activity stands out as the most robust and consistent predictor across all visualizations.</p>
+    <p class="lead" style="margin-bottom: 2.5rem;">Our analysis of 3,000 global survey responses reveals two consistent and meaningful findings: exercise and social interaction are the strongest lifestyle predictors of happiness, regardless of mental health condition, stress level, or demographic group.</p>
 
     <div class="findings-grid">
       <div class="finding-card highlight">
-        <h4>Exercise is the strongest predictor of happiness</h4>
-        <p>Across every visualization, higher exercise levels consistently correspond to higher happiness scores — regardless of stress level, diet, or other factors. This was the most robust pattern in the entire dataset.</p>
+        <h4>Exercise & social interaction drive happiness</h4>
+        <p>Higher exercise levels and greater social interaction both consistently correspond to higher happiness scores across all conditions and demographics. These are the two most actionable lifestyle factors for improving well-being.</p>
       </div>
       <div class="finding-card">
         <h4>Stress level alone doesn't determine happiness</h4>
-        <p>Average happiness differed by less than 0.5 points across low, moderate, and high stress groups. How people manage stress — particularly through exercise — appears to matter more than the stress level itself.</p>
+        <p>Average happiness differed by less than 0.5 points across low, moderate, and high stress groups. How people manage stress — through exercise and social engagement — matters more than stress level itself.</p>
       </div>
       <div class="finding-card">
         <h4>Mental health conditions are broadly distributed</h4>
-        <p>Anxiety, PTSD, Depression, and Bipolar Disorder are nearly equally represented across all 3,000 respondents, suggesting these conditions cut across demographic and lifestyle groups rather than clustering in specific ones.</p>
+        <p>Anxiety, PTSD, Depression, and Bipolar Disorder are nearly equally represented, suggesting these conditions cut across all demographic and lifestyle groups rather than clustering in specific ones.</p>
       </div>
       <div class="finding-card">
         <h4>Sleep and diet show modest associations</h4>
-        <p>Higher happiness is associated with slightly more sleep, but the effect is small. Diet type shows minimal differences in sleep hours. These factors may play a supporting role rather than a primary one in mental well-being.</p>
+        <p>Higher happiness is associated with slightly more sleep, but the effect is small. Diet type shows minimal differences in sleep hours. These factors play a supporting role rather than a primary one.</p>
       </div>
     </div>
 
     <div style="margin-top: 2.5rem; background: var(--warm-white); border: 0.5px solid var(--border); border-radius: 16px; padding: 2rem;">
       <h3 style="font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 1rem;">Future directions</h3>
-      <p style="font-size: 14px; color: var(--slate); line-height: 1.8;">Since this dataset is observational, we cannot establish causation. Future work could use longitudinal data to track how changes in habits correspond to changes in well-being over time. It would also be valuable to include more granular measures — such as exercise type and intensity, sleep quality rather than just duration, and dietary quantity alongside type. Additionally, expanding analysis beyond women to compare all gender groups would strengthen the generalizability of these findings. Interventional studies targeting exercise as a low-cost, accessible mental health support strategy would be a particularly impactful next step.</p>
+      <p style="font-size: 14px; color: var(--slate); line-height: 1.8;">Since this dataset is observational, we cannot establish causation. Future work could use longitudinal data to track how changes in exercise and social habits correspond to changes in well-being over time. It would also be valuable to include more granular measures — such as exercise type and intensity, social interaction quality, and sleep quality rather than just duration. Interventional studies targeting both exercise and social engagement as low-cost, accessible mental health support strategies would be a particularly impactful next step.</p>
     </div>
   </div>
 </section>
